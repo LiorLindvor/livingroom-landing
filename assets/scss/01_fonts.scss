@@ -1,0 +1,208 @@
+/*@font-face {
+  font-family: 'Helvetica';
+  src: url('../fonts/helvetica/Helvetica-Bold.eot');
+  src: url('../fonts/helvetica/Helvetica-Bold.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/helvetica/Helvetica-Bold.woff') format('woff'),
+  url('../fonts/helvetica/Helvetica-Bold.ttf') format('truetype'),
+  url('../fonts/helvetica/Helvetica-Bold.svg#Helvetica-Bold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('../fonts/helvetica/Helvetica-Light.eot');
+  src: url('../fonts/helvetica/Helvetica-Light.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/helvetica/Helvetica-Light.woff') format('woff'),
+  url('../fonts/helvetica/Helvetica-Light.ttf') format('truetype'),
+  url('../fonts/helvetica/Helvetica-Light.svg#Helvetica-Light') format('svg');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Bold Oblique';
+  src: url('../fonts/helvetica/Helvetica-BoldOblique.eot');
+  src: url('../fonts/helvetica/Helvetica-BoldOblique.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/helvetica/Helvetica-BoldOblique.woff') format('woff'),
+  url('../fonts/helvetica/Helvetica-BoldOblique.ttf') format('truetype'),
+  url('../fonts/helvetica/Helvetica-BoldOblique.svg#Helvetica-BoldOblique') format('svg');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Light Oblique';
+  src: url('../fonts/helvetica/Helvetica-LightOblique.eot');
+  src: url('../fonts/helvetica/Helvetica-LightOblique.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/helvetica/Helvetica-LightOblique.woff') format('woff'),
+  url('../fonts/helvetica/Helvetica-LightOblique.ttf') format('truetype'),
+  url('../fonts/helvetica/Helvetica-LightOblique.svg#Helvetica-LightOblique') format('svg');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Oblique';
+  src: url('../fonts/helvetica/Helvetica-Oblique.eot');
+  src: url('../fonts/helvetica/Helvetica-Oblique.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/helvetica/Helvetica-Oblique.woff') format('woff'),
+  url('../fonts/helvetica/Helvetica-Oblique.ttf') format('truetype'),
+  url('../fonts/helvetica/Helvetica-Oblique.svg#Helvetica-Oblique') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('../fonts/helvetica/Helvetica-Regular.eot');
+  src: url('../fonts/helvetica/Helvetica-Regular.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/helvetica/Helvetica-Regular.woff') format('woff'),
+  url('../fonts/helvetica/Helvetica-Regular.ttf') format('truetype'),
+  url('../fonts/helvetica/Helvetica-Regular.svg#Helvetica-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}*/
+
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('../fonts/helvetica/Helvetica-Compressed.eot');
+  src: url('../fonts/helvetica/Helvetica-Compressed.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/helvetica/Helvetica-Compressed.woff') format('woff'),
+  url('../fonts/helvetica/Helvetica-Compressed.ttf') format('truetype'),
+  url('../fonts/helvetica/Helvetica-Compressed.svg#Helvetica-Compressed') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('../fonts/helvetica/Helvetica-Light.eot');
+  src: url('../fonts/helvetica/Helvetica-Light.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/helvetica/Helvetica-Light.woff') format('woff'),
+  url('../fonts/helvetica/Helvetica-Light.ttf') format('truetype'),
+  url('../fonts/helvetica/Helvetica-Light.svg#Helvetica-Light') format('svg');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('../fonts/helvetica/Helvetica-BoldOblique.eot');
+  src: url('../fonts/helvetica/Helvetica-BoldOblique.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/helvetica/Helvetica-BoldOblique.woff') format('woff'),
+  url('../fonts/helvetica/Helvetica-BoldOblique.ttf') format('truetype'),
+  url('../fonts/helvetica/Helvetica-BoldOblique.svg#Helvetica-BoldOblique') format('svg');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('../fonts/helvetica/Helvetica-Bold.eot');
+  src: url('../fonts/helvetica/Helvetica-Bold.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/helvetica/Helvetica-Bold.woff') format('woff'),
+  url('../fonts/helvetica/Helvetica-Bold.ttf') format('truetype'),
+  url('../fonts/helvetica/Helvetica-Bold.svg#Helvetica-Bold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('../fonts/helvetica/HelveticaRounded-Bold.eot');
+  src: url('../fonts/helvetica/HelveticaRounded-Bold.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/helvetica/HelveticaRounded-Bold.woff') format('woff'),
+  url('../fonts/helvetica/HelveticaRounded-Bold.ttf') format('truetype'),
+  url('../fonts/helvetica/HelveticaRounded-Bold.svg#HelveticaRounded-Bold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('../fonts/helvetica/Helvetica.eot');
+  src: url('../fonts/helvetica/Helvetica.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/helvetica/Helvetica.woff') format('woff'),
+  url('../fonts/helvetica/Helvetica.ttf') format('truetype'),
+  url('../fonts/helvetica/Helvetica.svg#Helvetica') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('../fonts/helvetica/Helvetica_1.eot');
+  src: url('../fonts/helvetica/Helvetica_1.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/helvetica/Helvetica_1.woff') format('woff'),
+  url('../fonts/helvetica/Helvetica_1.ttf') format('truetype'),
+  url('../fonts/helvetica/Helvetica_1.svg#Helvetica') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('../fonts/helvetica/Helvetica-Oblique.eot');
+  src: url('../fonts/helvetica/Helvetica-Oblique.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/helvetica/Helvetica-Oblique.woff') format('woff'),
+  url('../fonts/helvetica/Helvetica-Oblique.ttf') format('truetype'),
+  url('../fonts/helvetica/Helvetica-Oblique.svg#Helvetica-Oblique') format('svg');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+
+
+
+@font-face {
+  font-family: 'icoFont';
+  src:  url('../fonts/icoFont/icoFont.eot');
+  src:  url('../fonts/icoFont/icoFont.eot') format('embedded-opentype'),
+  url('../fonts/icoFont/icoFont.ttf') format('truetype'),
+  url('../fonts/icoFont/icoFont.woff') format('woff'),
+  url('../fonts/icoFont/icoFont.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+[class^="ic-"], [class*=" ic-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icoFont' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: inherit;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ic-instagram:before {
+  content: "\e900";
+}
+.ic-whatsapp:before {
+  content: "\e901";
+}
+.ic-outline-email:before {
+  content: "\e902";
+}

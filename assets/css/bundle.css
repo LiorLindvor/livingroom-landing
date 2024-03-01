@@ -1476,16 +1476,58 @@ span.char {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1;
+  position: relative;
+  z-index: 1;
   background-color: #F8F8F3;
   border: 1px solid #F8F8F3;
   border-radius: 0.125rem;
+  overflow: hidden;
   -webkit-transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
   transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+.main-btn:before, .main-btn:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background-color: #080808;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  pointer-events: none;
+}
+.main-btn:before {
+  -webkit-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+.main-btn:after {
+  -webkit-transform: translateX(100%);
+      -ms-transform: translateX(100%);
+          transform: translateX(100%);
 }
 .main-btn.tp-1 {
   color: #F8F8F3;
   background-color: #080808;
   border-color: #080808;
+}
+.main-btn.tp-1:before, .main-btn.tp-1:after {
+  background-color: #F8F8F3;
+}
+.main-btn.tp-1:hover {
+  color: #080808;
+}
+.main-btn:hover {
+  color: #F8F8F3;
+}
+.main-btn:hover:before, .main-btn:hover:after {
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0);
 }
 h1 {
   margin: 0;
@@ -1527,154 +1569,12 @@ p {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   font-family: "Helvetica", sans-serif;
-  /*.submit-bth {
-    width: 100%;
-    margin-top: rm(16);
-
-    .main-btn {
-      width: 100%;
-    }
-  }*/
 }
 .form-fields label {
   display: block;
   width: 100%;
   position: relative;
   z-index: 1;
-  /*input[type="checkbox"],
-  input[type="radio"] {
-    position: absolute;
-    opacity: 0;
-    visibility: hidden;
-
-    &:checked {
-      ~ span {
-        &::before {
-          color: var(--main-blue);
-          border-color: var(--main-blue);
-        }
-      }
-    }
-
-    ~ span {
-      !*     gap: rm(8);
-           display: flex;
-           align-items: center;*!
-      display: block;
-      padding-left: rm(36);
-      font-size: rm(14);
-      font-weight: 400;
-      line-height: 1.429;
-
-      cursor: pointer;
-      position: relative;
-      z-index: 1;
-
-      a {
-        font-weight: 500;
-        color: var(--main-blue);
-        text-decoration: underline;
-      }
-
-      &::before {
-        font-family: $IconFont;
-        content: "\e901";
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: rm(24);
-        height: rm(24);
-        margin-right: rm(12);
-        font-size: rm(20);
-        line-height: 1;
-        color: transparent;
-        background: var(--base-white);
-        border: 1px solid rgba(220, 223, 234, 0.7);
-        border-radius: rm(4);
-        position: absolute;
-        top: rm(-2);
-        left: 0;
-        transition: color $transition, border-color $transition,
-        background-color $transition;
-      }
-    }
-  }
-
-  input[type="radio"] {
-    &:checked {
-      ~ span {
-        &::before {
-          color: transparent;
-          background: radial-gradient(circle at center, #1955DE 36%, #ffffff 0%);
-        }
-      }
-    }
-
-    ~ span {
-      &::before {
-        border-radius: 50%;
-      }
-    }
-  }*/
-  /*span.select {
-    display: block;
-    position: relative;
-    z-index: 1;
-
-    &:after {
-      font-family: $IconFont;
-      content: "\e921";
-      display: flex;
-      align-items: center;
-      font-size: rm(20);
-      position: absolute;
-      top: 0;
-      right: rm(21);
-      bottom: 0;
-      z-index: 2;
-      pointer-events: none;
-    }
-
-    select {
-      padding-right: rm(45);
-    }
-  }*/
-  /*&.error {
-    input,
-    textarea {
-      !*border-color: var(--web-secondary-color);*!
-    }
-
-    input[type="checkbox"],
-    input[type="radio"] {
-      ~ span {
-        &::before {
-          color: transparent;
-          !*border-color: var(--web-secondary-color);
-          background: var(--web-bg-color);*!
-        }
-      }
-    }
-
-    span.field {
-      [class^="ic-"],
-      [class*=" ic-"] {
-        display: none;
-      }
-
-      !*&::before {
-        font-family: $IconFont;
-        content: "\e901";
-        position: absolute;
-        top: 50%;
-        right: rm(14);
-        z-index: 2;
-        font-size: rm(16);
-        color: var(--web-secondary-color);
-        transform: translateY(-50%);
-      }*!
-    }
-  }*/
 }
 .form-fields label input,
 .form-fields label select,
@@ -1702,26 +1602,6 @@ p {
   display: block;
   position: relative;
   z-index: 1;
-  /*[class^="ic-"],
-  [class*=" ic-"] {
-    display: flex;
-    align-items: center;
-    padding: rm(4);
-    font-size: rm(24);
-    position: absolute;
-    top: 50%;
-    right: rm(15);
-    z-index: 2;
-    transform: translateY(-50%);
-
-    ~ {
-      input,
-      select,
-      textarea {
-        padding-right: rm(40);
-      }
-    }
-  }*/
 }
 .form-fields label span.field input,
 .form-fields label span.field select,
@@ -1811,6 +1691,11 @@ p {
 .form-fields label.disabled {
   pointer-events: none;
   opacity: 0.8;
+}
+.form-fields label.error input,
+.form-fields label.error select,
+.form-fields label.error textarea {
+  border-color: #FF0000;
 }
 
 header {
@@ -2163,6 +2048,14 @@ header .logo-wrap img {
   background: #F8F8F3;
   border-radius: 0.125rem;
 }
+.contact-host .contact-info form {
+  display: inherit;
+  gap: inherit;
+  -webkit-box-orient: inherit;
+  -webkit-box-direction: inherit;
+      -ms-flex-direction: inherit;
+          flex-direction: inherit;
+}
 .contact-host .contact-info .contact-title {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2210,9 +2103,20 @@ header .logo-wrap img {
 }
 .contact-host .contact-info .contact-socials ul li {
   font-size: 1.5rem;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 .contact-host .contact-info .contact-socials ul li a {
   color: inherit;
+}
+.contact-host .contact-info .contact-socials ul li:hover {
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
 }
 .contact-host .contact-info .contact-more {
   text-align: center;

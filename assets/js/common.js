@@ -71,7 +71,7 @@ gsap.utils.toArray('.txt-anim').forEach(container => {
     });
 
 // gsap.set (chars, {overflow: "hidden"});
-    splitTextTl.from(chars, {duration: 0.5, opacity: 0, bottom: -25, ease: "circ:out", stagger: 0.03}, "+=0");
+    splitTextTl.from(chars, {duration: 0.3, opacity: 0, bottom: -25, ease: "circ:out", stagger: 0.01}, "+=0");
 });
 
 // --- END TEXT ANIMATION ---
@@ -118,5 +118,105 @@ const formFields = () => {
 };
 
 formFields();
+
+const validateEmail = (email) => {
+    return email.match(
+        /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    );
+};
+
+/*const validatePhone = (phone) => {
+    return phone.match(
+        /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    );
+};*/
+
+function sendForm(e) {
+    let submitBTN = e.target,
+        form = submitBTN.closest('form');
+
+    if (!form.classList.contains('disabled')) {
+        if (form.length) {
+            let error = false,
+                name = form.querySelector('input[name=name]').value,
+                email = form.querySelector('input[name=email]').value,
+                phone_code = form.querySelector('input[name=phone_code]').value,
+                phone = form.querySelector('input[name=phone]').value,
+                company = form.querySelector('input[name=company]').value,
+                message = form.querySelector('textarea[name=message]').value;
+                // email_to = form.querySelector('input[name=email_to]').value;
+
+            if (!name || name.length < 2) {
+                error = true;
+                form.querySelector('input[name=name]').closest('label').classList.add('error');
+                setTimeout(function () {
+                    form.querySelector('input[name=name]').closest('label').classList.remove('error');
+                }, 2000);
+                return false;
+            }
+
+            if (!email || !validateEmail(email)) {
+                error = true;
+                form.querySelector('input[name=email]').closest('label').classList.add('error');
+                setTimeout(function () {
+                    form.querySelector('input[name=email]').closest('label').classList.remove('error');
+                }, 2000);
+                return false;
+            }
+
+            if (!phone || phone.length < 9) {
+                error = true;
+                form.querySelector('input[name=phone]').closest("label").classList.add("error");
+                setTimeout(function () {
+                    form.querySelector('input[name=phone]').closest("label").classList.remove("error");
+                }, 2000);
+                return false;
+            }
+
+          /*  if (!company || company.length < 2) {
+                error = true;
+                form.querySelector('input[name=company]').closest('label').classList.add('error');
+                setTimeout(function () {
+                    form.querySelector('input[name=company]').closest('label').classList.remove('error');
+                }, 2000);
+                return false;
+            }*/
+
+            if (!error) {
+                submitBTN.classList.add('disabled');
+                const URL = 'sendform.php';
+                // const URL =  '/wp-admin/admin-ajax.php';
+                let formData = new FormData();
+                //formData.append("action", "sendForm");
+                formData.append("name", name);
+                formData.append("email", email);
+                formData.append("phone_code", phone_code);
+                formData.append("phone", phone);
+                formData.append("company", company);
+                formData.append("message", message);
+                // formData.append("email_to", email_to);
+
+                fetch(URL, {
+                    method: "POST",
+                    body: formData,
+                }).then(function (response) {
+                    if (response.ok) { // если HTTP-статус в диапазоне 200-299
+                        /*form.reset();
+                        submitBTN.classList.remove('disabled');*/
+
+                        form.remove();
+
+                        // получаем тело ответа (см. про этот метод ниже)
+                        return response.text();
+                    }
+                }).catch(function (error) {
+                    console.error('Request failed', error);
+                })
+            }
+        }
+    }
+}
+
+
 
 //# sourceMappingURL=maps/common.js.map
